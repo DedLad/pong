@@ -1,10 +1,10 @@
-# Import required library
+#turtle is similar to tk
 import turtle
 
 
-# Create screen
+# Create screen ez
 sc = turtle.Screen()
-sc.title("Pong game")
+sc.title("ur mom")
 sc.bgcolor("white")
 sc.setup(width=1000, height=600)
 
@@ -29,23 +29,23 @@ right_pad.penup()
 right_pad.goto(400, 0)
 
 
-# Ball of circle shape
+#BALLLL
 hit_ball = turtle.Turtle()
 hit_ball.speed(40)
 hit_ball.shape("circle")
-hit_ball.color("blue")
+hit_ball.color("black")
 hit_ball.penup()
 hit_ball.goto(0, 0)
 hit_ball.dx = 5
 hit_ball.dy = -5
 
 
-# Initialize the score
+# score inis
 left_player = 0
 right_player = 0
 
 
-# Displays the score
+# score display
 sketch = turtle.Turtle()
 sketch.speed(0)
 sketch.color("blue")
@@ -53,10 +53,9 @@ sketch.penup()
 sketch.hideturtle()
 sketch.goto(0, 260)
 sketch.write("Left_player : 0 Right_player: 0",
-			align="center", font=("Courier", 24, "normal"))
+			align="center", font=("Verdana", 24, "normal"))
 
-
-# Functions to move paddle vertically
+#moving dem paddles
 def paddleaup():
 	y = left_pad.ycor()
 	y += 20
@@ -95,7 +94,7 @@ while True:
 	hit_ball.setx(hit_ball.xcor()+hit_ball.dx)
 	hit_ball.sety(hit_ball.ycor()+hit_ball.dy)
 
-	# Checking borders
+	# border detection
 	if hit_ball.ycor() > 280:
 		hit_ball.sety(280)
 		hit_ball.dy *= -1
@@ -122,7 +121,7 @@ while True:
 								left_player, right_player), align="center",
 								font=("Courier", 24, "normal"))
 
-	# Paddle ball collision
+	# collision
 	if (hit_ball.xcor() > 360 and
 						hit_ball.xcor() < 370) and
 						(hit_ball.ycor() < right_pad.ycor()+40 and
