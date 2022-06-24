@@ -122,16 +122,10 @@ while True:
 								font=("Courier", 24, "normal"))
 
 	# collision
-	if (hit_ball.xcor() > 380 and
-						hit_ball.xcor() < 380) and
-						(hit_ball.ycor() < right_pad.ycor()+40 and
-						hit_ball.ycor() > right_pad.ycor()-40):
+	if (hit_ball.xcor() > 380 and hit_ball.xcor() < 380) and (hit_ball.ycor() < right_pad.ycor()+40 and hit_ball.ycor() > right_pad.ycor()-40):
 		hit_ball.setx(380)
 		hit_ball.dx*=-1
 		
-	if (hit_ball.xcor()<-380 and
-					hit_ball.xcor()>-380) and
-					(hit_ball.ycor()<left_pad.ycor()+40 and
-						hit_ball.ycor()>left_pad.ycor()-40):
+	if (hit_ball.xcor()<-380 and hit_ball.xcor()>-380) and (hit_ball.ycor()<left_pad.ycor()+40 and hit_ball.ycor()>left_pad.ycor()-40):
 		hit_ball.setx(-380)
 		hit_ball.dx*=-1
