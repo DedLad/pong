@@ -5,7 +5,7 @@ import turtle
 # Create screen ez
 sc = turtle.Screen()
 sc.title("ur mom")
-sc.bgcolor("gray")
+sc.bgcolor("white")
 sc.setup(width=1000, height=600)
 
 
@@ -14,7 +14,7 @@ left_pad = turtle.Turtle()
 left_pad.speed(0)
 left_pad.shape("square")
 left_pad.color("black")
-left_pad.shapesize(stretch_wid=5, stretch_len=2)
+left_pad.shapesize(stretch_wid=6, stretch_len=2)
 left_pad.penup()
 left_pad.goto(-400, 0)
 
@@ -41,8 +41,8 @@ hit_ball.dy = -5
 
 
 # score inis
-player1 = 0
-player2 = 0
+left_player = 0
+right_player = 0
 
 
 # score display
@@ -109,8 +109,8 @@ while True:
 		left_player += 1
 		sketch.clear()
 		sketch.write("Left_player : {} Right_player: {}".format(
-					player1, player2), align="center",
-					font=("Verdana", 20, "normal"))
+					left_player, right_player), align="center",
+					font=("Verdana", 24, "normal"))
 
 	if hit_ball.xcor() < -500:
 		hit_ball.goto(0, 0)
@@ -119,13 +119,13 @@ while True:
 		sketch.clear()
 		sketch.write("Left_player : {} Right_player: {}".format(
 								left_player, right_player), align="center",
-								font=("Courier", 24, "normal"))
+								font=("Verdana", 24, "normal"))
 
 	# collision
-	if (hit_ball.xcor() > 380 and hit_ball.xcor() < 380) and (hit_ball.ycor() < right_pad.ycor()+40 and hit_ball.ycor() > right_pad.ycor()-40):
-		hit_ball.setx(380)
+	if (hit_ball.xcor() > 360 and hit_ball.xcor() < 370) and (hit_ball.ycor() < right_pad.ycor()+40 and hit_ball.ycor() > right_pad.ycor()-40):
+		hit_ball.setx(360)
 		hit_ball.dx*=-1
 		
-	if (hit_ball.xcor()<-380 and hit_ball.xcor()>-380) and (hit_ball.ycor()<left_pad.ycor()+40 and hit_ball.ycor()>left_pad.ycor()-40):
-		hit_ball.setx(-380)
+	if (hit_ball.xcor()<-360 and hit_ball.xcor()>-370) and (hit_ball.ycor()<left_pad.ycor()+40 and hit_ball.ycor()>left_pad.ycor()-40):
+		hit_ball.setx(-360)
 		hit_ball.dx*=-1
